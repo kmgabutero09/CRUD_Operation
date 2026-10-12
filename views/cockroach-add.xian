@@ -1,0 +1,27 @@
+
+{{> head }}
+
+<body>
+  <div class="container mx-auto px-4 py-8">
+
+    <h1 class="text-3xl font-bold text-center mt-10">Welcome to XianFire 🔥</h1>
+
+    <h1>Add Cockroach Record</h1>
+
+    <form action="/cockroach-table/add" method="POST">
+      <p>First Name: <input type="text" name="FirstName" required></p>
+      <p>Last Name: <input type="text" name="LastName" required></p>
+      <p>Age: <input type="number" name="age" required></p>
+      <p>Gender: <input type="text" name="gender" required></p>
+      <p>Type: <input type="text" name="type" required></p>
+      <p>HP: <input type="text" name="hp" required></p>
+      <p>Address: <input type="text" name="address" required></p>
+
+      <button type="submit">Save Cockroach</button>
+      <a href="/cockroach-table">Cancel</a>
+    </form>
+
+  </div>
+</body>
+
+{{> footer }}

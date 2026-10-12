@@ -1,0 +1,65 @@
+
+{{> head }}
+
+<body>
+    <h1 class="text-3xl font-bold text-center mt-10">
+        Welcome to XianFire 🔥
+    </h1>
+
+    <p>
+        <a href="/cockroach-table/add">
+            <button type="button">Add Cockroach</button>
+        </a>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Type</th>
+                <th>HP</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each cockroaches}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{FirstName}}</td>
+                <td>{{LastName}}</td>
+                <td>{{age}}</td>
+                <td>{{gender}}</td>
+                <td>{{type}}</td>
+                <td>{{hp}}</td>
+                <td>{{address}}</td>
+                <td>
+                    <a href="/cockroach-table/{{id}}/edit">
+                        <button type="button">Edit</button>
+                    </a>
+
+                    <form
+                        action="/cockroach-table/{{id}}/delete"
+                        method="POST"
+                        style="display:inline;"
+                        onsubmit="return confirm('Delete this record?');"
+                    >
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+                <td colspan="9">No records found.</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+
+{{> footer }}

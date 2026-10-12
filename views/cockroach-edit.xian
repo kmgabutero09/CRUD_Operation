@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Cockroach Record</title>
+</head>
+<body>
+
+    <h1>Edit Cockroach Record</h1>
+
+    <form action="/cockroach-table/{{cockroach.id}}/edit" method="POST">
+
+        <p>
+            First Name:
+            <input type="text" name="FirstName"
+                   value="{{cockroach.FirstName}}" required>
+        </p>
+
+        <p>
+            Last Name:
+            <input type="text" name="LastName"
+                   value="{{cockroach.LastName}}" required>
+        </p>
+
+        <p>
+            Age:
+            <input type="number" name="age"
+                   value="{{cockroach.age}}" required>
+        </p>
+
+        <p>
+            Gender:
+            <input type="text" name="gender"
+                   value="{{cockroach.gender}}" required>
+        </p>
+
+        <p>
+            Type:
+            <input type="text" name="type"
+                   value="{{cockroach.type}}" required>
+        </p>
+
+        <p>
+            HP:
+            <input type="text" name="hp"
+                   value="{{cockroach.hp}}" required>
+        </p>
+
+        <p>
+            Address:
+            <input type="text" name="address"
+                   value="{{cockroach.address}}" required>
+        </p>
+
+        <button type="submit">Save Changes</button>
+        <a href="/cockroach-table">Cancel</a>
+
+    </form>
+
+</body>
+</html>
